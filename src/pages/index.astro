@@ -32,8 +32,8 @@ const posts = await Astro.glob("../pages/post/**/*.mdx");
     font-family: "HeaderFont", "Open Sans", sans-serif;
   }
   .name {
+    @apply font-extrabold;
     font-size: var(--font-head-size);
-    font-weight: 800;
     padding: 0 0 0.5em 0;
   }
 </style>
