@@ -20,6 +20,5 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   integrations: [mdx(), tailwind(), svelte(), image()],
-  output: "server",
   adapter: netlify(),
 });
