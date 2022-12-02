@@ -10,6 +10,11 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
+import netlify from "@astrojs/netlify/functions";
+
+// https://astro.build/config
 export default defineConfig({
-  integrations: [mdx(), tailwind(), svelte()]
+  integrations: [mdx(), tailwind(), svelte()],
+  output: "server",
+  adapter: netlify()
 });
