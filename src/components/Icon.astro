@@ -1,0 +1,31 @@
+---
+export interface Props {
+  icon: string;
+  href: string;
+  name?: string;
+}
+
+const { href, icon, name } = Astro.props;
+---
+
+<a href={href} class="icon">
+  <object data={icon} type="image/svg+xml" title={name}>
+    <img src={icon} alt={name} />
+  </object>
+</a>
+<style>
+  .icon {
+    /* flex:1; */
+    height: var(--icon-dim);
+    width: var(--icon-dim);
+    transition: all 0.2s ease-in-out;
+    transition-delay: 0.1s;
+    cursor: pointer;
+  }
+  .icon:hover {
+    height: calc(var(--icon-dim) * var(--icon-grow));
+    width: calc(var(--icon-dim) * var(--icon-grow));
+    /* opacity: 0.5; */
+    cursor: pointer;
+  }
+</style>

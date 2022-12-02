@@ -1,0 +1,41 @@
+---
+import Layout from "./Layout.astro";
+
+const {
+  frontmatter: { title, description, pubDate, image, author },
+} = Astro.props;
+---
+
+<Layout title={title}>
+  <main>
+    <article>
+      <div class="article-head">
+        <h1 class="title">{title}</h1>
+        <em>Written by: {author}</em>
+        Published on: {pubDate && <time>{pubDate}</time>}
+      </div>
+      <hr />
+      <div class="article-body">
+        {image && <img src={image} alt="" />}
+        <slot />
+      </div>
+    </article>
+  </main>
+</Layout>
+<style>
+  article {
+    @apply bg-white m-4 rounded-md;
+  }
+  .article-head {
+    @apply p-4;
+  }
+  .article-body {
+    @apply h-full p-4 text-base;
+  }
+  .title {
+    @apply font-bold text-2xl;
+  }
+  img {
+    @apply max-w-md float-right;
+  }
+</style>

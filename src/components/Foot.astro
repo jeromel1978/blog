@@ -1,0 +1,30 @@
+---
+import Icon from "../components/Icon.astro";
+import IconLinkedIn from "../images/icons/socialmedia/linkedin-icon.svg";
+import IconTwitter from "../images/icons/socialmedia/twitter.svg";
+import IconYouTube from "../images/icons/socialmedia/youtube.svg";
+import IconGitHub from "../images/icons/socialmedia/github.svg";
+import IconHackerRank from "../images/icons/socialmedia/HackerRank_logo.svg";
+import IconFacebook from "../images/icons/socialmedia/facebook-logo-2019.svg";
+import IconTwitch from "../images/icons/socialmedia/twitch.svg";
+---
+
+<div class="icons">
+  <Icon href="https://www.linkedin.com/in/jerome-losorata" icon={IconLinkedIn} name="LinkedIn" />
+  <Icon href="https://twitter.com/jeromelosorata" icon={IconTwitter} name="Twitter" />
+  <Icon href="https://github.com/jeromel1978" icon={IconGitHub} name="GitHub" />
+  <Icon href="https://www.hackerrank.com/jerome_losorata" icon={IconHackerRank} name="HackerRank" />
+  <Icon href="https://www.facebook.com/jerome.losorata" icon={IconFacebook} name="Facebook" />
+  <Icon href="https://www.youtube.com/c/JeromeLosorata" icon={IconYouTube} name="YouTube" />
+  <Icon href="https://www.twitch.tv/jeromel1978" icon={IconTwitch} name="Twitch" />
+</div>
+<style>
+  .icons {
+    height: var(--icon-dim);
+    display: grid;
+    grid-template-columns: repeat(7, min-content);
+    justify-content: center;
+    gap: calc(var(--icon-dim) * var(--icon-gap));
+    padding: 0.5em;
+  }
+</style>

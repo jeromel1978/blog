@@ -1,0 +1,151 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Foot from "../components/Foot.astro";
+import Card from "../components/Card.astro";
+import IconJL from "../images/JLlogo.svg";
+import Headshot from "../images/headshotsmall.jpg";
+import { Image, Picture } from "@astrojs/image/components";
+import Background from "../images/keyboard.jpg";
+---
+
+<Layout title="About">
+  <main>
+    <div class="head">
+      <div class="logo">
+        <object class="icon-logo" data={IconJL} type="image/svg+xml" title="JLLogo">
+          <img src={IconJL} alt="JLLogo" />
+        </object>
+      </div>
+      <div class="headcont">
+        <div class="header name">JEROME LOSORATA</div>
+        <div class="tagline">Full Stack Developer, Technology Enthusiast, Science Enthusiast</div>
+      </div>
+      <div class="headimage">
+        <img src="/images/headshotsmall.jpg" alt="Headshot" />
+      </div>
+    </div>
+    <div class="content">
+      <div>
+        Welcome to my personal .crypto website. For over eight years I have embraced crypto technology. It has
+        fascinated me how these concepts are designed and implemented. Free speech, individual responsibility, and
+        accountability are what I believe in and is the reason why I decided to endorse block chain technology by
+        starting this page.
+      </div>
+      <div>
+        Learning and building things are my passions. It could be about anything from fine arts, film, music, physics,
+        microbiology, to coding. This world has so much to offer and so many mysteries to solve. From the large scale to
+        the small scale, there is always something new to find that is right in front of your face. Learning from all
+        experiences, good or bad, ensures that it is never a wasted.
+      </div>
+      <div>
+        Opportunities are always around us, I am always open to future ones. So if you are interested in including me in
+        any, I would love to hear from you on any of the above social media sites. Until then, I wish you a health and
+        happy life doing what you love.
+      </div>
+    </div>
+  </main>
+  <footer>
+    <Foot />
+  </footer>
+</Layout>
+
+<style define:vars={{ Background }}>
+  /* main {
+    margin: auto;
+    padding: 1.5rem;
+    max-width: 60ch;
+  } */
+  .headimage,
+  .logo {
+    display: flex;
+    justify-content: space-around;
+  }
+  .headimage > img,
+  .logo > * {
+    height: var(--hs-size);
+    width: var(--hs-size);
+  }
+  .headimage > img {
+    border-radius: calc(var(--hs-size) * 0.5);
+  }
+  .head {
+    position: relative;
+    display: flex;
+    background: hsl(0 0% 50%/0.2);
+    padding: calc(var(--hs-size) * 0.5);
+    align-items: center;
+    justify-items: center;
+  }
+  .head:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("/images/keyboard.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+  }
+  .head > * {
+    flex: 1;
+  }
+  .headcont {
+    flex: 2;
+  }
+  .header {
+    font-family: "HeaderFont", "Open Sans", sans-serif;
+  }
+  .name {
+    font-size: var(--font-head-size);
+    font-weight: 800;
+    padding: 0 0 0.5em 0;
+  }
+  a:link,
+  a:hover {
+    text-decoration: none;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-flow: column dense 1 auto;
+    gap: calc(var(--font-main-size) * 0.5);
+    padding: calc(var(--font-main-size) * 1.5);
+  }
+  /* @media only screen and (min-width: 610px) {
+    :root {
+      --icon-dim: 1.25rem;
+      --hs-size: 8rem;
+      --font-head-size: 2rem;
+      --font-main-size: 1rem;
+    }
+    .content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 1000px) {
+    :root {
+      --icon-dim: 1.5rem;
+      --hs-size: 10rem;
+      --font-head-size: 2.5rem;
+      --font-main-size: 1.25rem;
+    }
+    .content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 1528px) {
+    :root {
+      --icon-dim: 2rem;
+      --hs-size: 15rem;
+      --font-head-size: 3rem;
+      --font-main-size: 1.5rem;
+    }
+  } */
+</style>
